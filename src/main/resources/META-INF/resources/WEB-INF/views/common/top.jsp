@@ -5,12 +5,11 @@
             <div class="container">
                 <div class="row">
                     <nav class="navbar navbar-expand-lg">
-                        <div class="collapse navbar-collapse">
+                        <div class="navbar-collapse">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="main">Home</a>
+                                    <a class="nav-link" href="main">중고거래</a>
                                 </li>
-       
                             </ul>
                         </div>
                         
@@ -38,9 +37,6 @@
 	                            </li>
 	                             <li class="nav-item">
 	                               <a class="nav-link" href="mypage">mypage</a>
-	                            </li>
-	                            <li class="nav-item">
-	                               <a class="nav-link" href="cartList">cartList</a>
 	                            </li>
 	                        </ul>
                         </c:if>
