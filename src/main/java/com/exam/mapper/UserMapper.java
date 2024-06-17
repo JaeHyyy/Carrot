@@ -9,5 +9,5 @@ import com.exam.dto.UserDTO;
 @Mapper
 public interface UserMapper {
 
-	public int userAdd(UserDTO dto); 
+//	public int userAdd(UserDTO dto); 
 }

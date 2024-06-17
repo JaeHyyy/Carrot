@@ -4,5 +4,5 @@ import com.exam.dto.UserDTO;
 
 public interface UserService {
 
-	public int userAdd(UserDTO dto); 
+//	public int userAdd(UserDTO dto); 
 }

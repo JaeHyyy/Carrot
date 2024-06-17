@@ -12,11 +12,11 @@ public class MainController {
 	
 	Logger logger = LoggerFactory.getLogger(getClass());
 
-	UserService userService;
-	
-	public MainController(UserService userService) {
-		this.userService = userService;
-	}
+//	UserService userService;
+//	
+//	public MainController(UserService userService) {
+//		this.userService = userService;
+//	}
 	
 	@GetMapping("/main")
 	public String main() {
