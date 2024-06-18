@@ -9,26 +9,27 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.exam.dto.GoodsDTO;
+import com.exam.dto.CartDTO;
+import com.exam.service.CartService;
 import com.exam.service.GoodsService;
 
 @Controller
-public class MainController {
+public class CartController {
 	
 	Logger logger = LoggerFactory.getLogger(getClass());
 	
-	GoodsService goodsService;
+	CartService cartService;
 
-	public MainController(GoodsService goodsService) {
-		this.goodsService = goodsService;
+	public CartController(CartService cartService) {
+		this.cartService = cartService;
 	}
 	
-	@GetMapping("/main")
+	@GetMapping("/cart")
 	public String main(ModelMap m) {
+		List<CartDTO> cart = cartService.cartList();
+		m.addAttribute("cart", cart);
 		
-		List<GoodsDTO> goodsList = goodsService.goodsList();
-		m.addAttribute("goodsList", goodsList);
 		
-		return "main";
+		return "cart";
 	}
 }

@@ -6,7 +6,7 @@
 	
 		// 회원가입 서브밋
 		$("form").on("submit", function(){
-			alert("login submit");
+			alert("로그인 성공!");
 			this.action="login";  //LoginServlet의 맵핑값
 			this.method="post";
 		});
