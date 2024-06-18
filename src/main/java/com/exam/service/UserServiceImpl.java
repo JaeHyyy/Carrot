@@ -1,5 +1,7 @@
 package com.exam.service;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Service;
 
 import com.exam.dto.UserDTO;
@@ -22,5 +24,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int userAdd(UserDTO dto) {
 		return userMapper.userAdd(dto);
+	}
+
+	@Override
+	public UserDTO login(Map<String, String> map) {
+		return userMapper.login(map);
 	}
 }

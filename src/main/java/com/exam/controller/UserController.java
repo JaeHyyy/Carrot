@@ -52,4 +52,18 @@ UserService userService;
 		return "redirect:main";
 	}
 	
+//	@GetMapping("/mypage")
+//	public String mypage(ModelMap m) {
+//		
+//		// 세션에 저장된 MemberDTO 얻기
+//		MemberDTO dto = (MemberDTO)m.getAttribute("login");
+//		logger.info("logger:myapage:{}", dto);
+//		String userid = dto.getUserid();
+//		
+//		MemberDTO searchDTO = memberService.mypage(userid);
+//		m.addAttribute("login", searchDTO);
+//		
+//		return "mypage";
+//	}
+	
 }
