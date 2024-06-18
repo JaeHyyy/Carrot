@@ -8,4 +8,5 @@ public interface GoodsService {
 
 	public List<GoodsDTO> goodsList();
 	public GoodsDTO goodsRetrieve(String gCode);
+	public int goodsZzim(GoodsDTO dto);
 }
