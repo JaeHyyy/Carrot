@@ -5,15 +5,19 @@
   
 <mapper namespace="com.exam.mapper.UserMapper">
 
-   <!-- 회원가입 -->
-  	<!--<insert id="userAdd" parameterType="UserDTO">
-  	  insert into user (userid,passwd,username,post,addr1,addr2,
-  	                     phone1, phone2, phone3, email1, email2
-  	                    ) 
-  	  values(#{userid},#{passwd},#{username},#{post},#{addr1},#{addr2},
-  	                   #{phone1},#{phone2},#{phone3},#{email1},#{email2})
-
-  	</insert>-->
+   <!-- id중복체크 -->
+	<select id="idCheck" parameterType="String" resultType="UserDTO">
+		select *
+		from user
+		where userid=#{userid}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="userAdd" parameterType="UserDTO">
+		insert into user (userid,passwd,username,post,addr1,addr2,phone1, phone2, phone3, email1, email2)
+		values(#{userid},#{passwd},#{username},#{post},#{addr1},#{addr2},#{phone1},#{phone2},#{phone3},#{email1},#{email2})
+	</insert>
+	
    
 </mapper>
 

@@ -3,6 +3,6 @@ package com.exam.service;
 import com.exam.dto.UserDTO;
 
 public interface UserService {
-
-//	public int userAdd(UserDTO dto); 
+	public UserDTO idCheck(String userid);
+	public int userAdd(UserDTO dto);
 }

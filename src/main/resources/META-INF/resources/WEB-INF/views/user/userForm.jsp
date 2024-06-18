@@ -40,11 +40,11 @@
 		}); // id 중복 체크
 		
 		// 회원가입 서브밋
-		// $("form").on("submit", function(){
-		// 	alert("memberForm submit");
-		// 	this.action="MemberAddServlet";  //MemberAddServlet의 맵핑값
-		// 	this.method="post";
-		// });
+	/* 	$("form").on("submit", function(){
+			alert("memberForm submit");
+			this.action="MemberAddServlet";  //MemberAddServlet의 맵핑값
+			this.method="post";
+		}); */
 		
 		
 		
@@ -52,13 +52,14 @@
 	});// ready()
 
 </script>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" 
+    prefix="form"%>
 <div class="container">
     <form:form class="row g-3 m-4" modelAttribute="userDTO" method="post">
 		  <div class="row mb-3">
 		    <label for="userid" class="col-sm-2 col-form-label">*아이디</label>
 		    <div class="col-auto">
-		      <form:input type="text" class="form-control" path="userid" />
+		      <form:input type="text" class="form-control"  path="userid" />
 		    </div>
 		    <div class="col-auto">
 			    <button type="button" class="btn btn-primary mb-3" id="idDupulicatedcheck">아이디중복</button>
@@ -71,8 +72,8 @@
 		    <label for="password" class="col-sm-2 col-form-label">*비밀번호</label>
 		    <div class="col-auto">
 		      <form:input type="password" class="form-control" path="passwd" />
-			  <form:errors path="passwd"></form:errors>
-			</div>
+		      <form:errors path="passwd"></form:errors>
+		    </div>
 		  </div>
 		  <div class="row mb-3">
 		    <label for="passwd2" class="col-sm-2 col-form-label">비밀번호확인</label>
@@ -86,7 +87,7 @@
 		  <div class="row mb-3">
 		    <label for="username" class="col-sm-2 col-form-label">이름</label>
 		    <div class="col-auto">
-		      <form:input type="text" class="form-control" name="username" id="username" />
+		      <form:input type="text" class="form-control" path="username" />
 		    </div>
 		  </div>
 		  <hr>

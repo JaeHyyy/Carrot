@@ -8,14 +8,19 @@ import com.exam.mapper.UserMapper;
 
 @Service
 public class UserServiceImpl implements UserService {
+	UserMapper userMapper;
 
-//	UserMapper userMapper;
-//	
-//	@Override
-//	public int userAdd(UserDTO dto) {
-//		return userMapper.userAdd(dto);
-//	}
+	public UserServiceImpl(UserMapper userMapper) {
+		this.userMapper = userMapper;
+	}
 
-	
+	@Override
+	public UserDTO idCheck(String userid) {
+		return userMapper.idCheck(userid);
+	}
 
+	@Override
+	public int userAdd(UserDTO dto) {
+		return userMapper.userAdd(dto);
+	}
 }
