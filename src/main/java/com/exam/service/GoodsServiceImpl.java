@@ -25,6 +25,11 @@ public class GoodsServiceImpl implements GoodsService {
 	public GoodsDTO goodsRetrieve(String gCode) {
 		return goodsMapper.goodsRetrieve(gCode);
 	}
+
+	@Override
+	public int goodsZzim(GoodsDTO dto) {
+		return goodsMapper.goodsZzim(dto);
+	}
 	
 
 }
