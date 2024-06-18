@@ -5,7 +5,7 @@
   <div class="row">
     <c:forEach var="dto" items="${goodsList}">
 	    <div class="col border border-dark m-4 w-80">
-	      <a href="#"> 
+	      <a href="goodsRetrieve?gCode=${dto.gCode}"> 
 			<img src="images/items/${dto.gImage}.png" width="200">
 		  </a>
 	       <div class="mt-4 fs-6">${dto.gName}</div>

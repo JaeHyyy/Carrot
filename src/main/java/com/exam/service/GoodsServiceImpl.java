@@ -21,4 +21,10 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsMapper.goodsList();
 	}
 
+	@Override
+	public GoodsDTO goodsRetrieve(String gCode) {
+		return goodsMapper.goodsRetrieve(gCode);
+	}
+	
+
 }

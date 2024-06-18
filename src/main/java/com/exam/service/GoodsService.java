@@ -7,5 +7,5 @@ import com.exam.dto.GoodsDTO;
 public interface GoodsService {
 
 	public List<GoodsDTO> goodsList();
-	
+	public GoodsDTO goodsRetrieve(String gCode);
 }
