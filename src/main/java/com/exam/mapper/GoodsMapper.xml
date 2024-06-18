@@ -15,4 +15,17 @@
             gImage
      from goods
    </select>
+   
+   <!-- 상품 자세히보기 -->
+   <select id="goodsRetrieve" parameterType="string" resultType="GoodsDTO">
+     select gCode,
+     		userid,
+            gCategory,
+            gName,
+            gContent,
+            gPrice,
+            gImage
+     from goods
+     where gCode = #{gCode}
+   </select>
 </mapper>

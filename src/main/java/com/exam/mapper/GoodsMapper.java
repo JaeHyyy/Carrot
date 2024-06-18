@@ -10,5 +10,5 @@ import com.exam.dto.GoodsDTO;
 public interface GoodsMapper {
 
 	public List<GoodsDTO> goodsList();
-	
+	public GoodsDTO goodsRetrieve(String gCode);
 }
