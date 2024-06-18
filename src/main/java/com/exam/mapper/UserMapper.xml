@@ -18,6 +18,15 @@
 		values(#{userid},#{passwd},#{username},#{post},#{addr1},#{addr2},#{phone1},#{phone2},#{phone3},#{email1},#{email2})
 	</insert>
 	
+	<!-- 로그인 -->
+	<select id="login" parameterType="hashmap" resultType="UserDTO">
+  	  select *
+      from user
+      where userid=#{userid} and passwd=#{passwd}
+  	</select>
+  	
+  	
+	
    
 </mapper>
 
