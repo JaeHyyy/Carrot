@@ -21,10 +21,4 @@ public class CartServiceImpl implements CartService {
 	public List<CartDTO> cartList() {
 		return cartMapper.cartList();
 	}
-
-	
-
-	
-	
-
 }

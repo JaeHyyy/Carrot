@@ -5,7 +5,8 @@
   
 <mapper namespace="com.exam.mapper.CartMapper">
 	<select id="cartList" resultType="CartDTO">
-		select num, userid, gCode
-		from cart
+		SELECT c.userid, c.gCode, g.*
+		FROM cart c
+		JOIN goods g ON c.gCode = g.gCode;
 	</select>
 </mapper>

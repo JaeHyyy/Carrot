@@ -23,19 +23,18 @@
                             </tr>
                     </thead>
                     <tbody>
-                      <c:set var="sum" value="0"/>
-                      <c:forEach var="dto" items="${cart}" varStatus="status">
-                         <!-- <c:set var="amount" value="${dto.gAmount}"/> -->
-                         <c:set var="sum" value="${dto.cart[0].gPrice + sum}"/>
-						 <tr>
-						            <td><input type="checkbox" name="check"  class="check"></td> 
-					                <td>${dto.num}</td> 
-                                    <td><img src="images/items/${dto.cart[0].gImage}.png" width="50" height="50" ></td>
-                                    <td>${dto.gCode}</td>
-                                    <td>${dto.cart[0].gPrice}</td>
-                                    <td>${dto.cart[0].gPrice}</td>
-                                    <td> <a href="#" class="btn btn-warning" >Delete</a> </td>
-						</tr>
+                      <c:set var="sum" value="0" />
+                    <c:forEach var="dto" items="${cart}">
+                        <c:set var="totalPrice" value="${dto.gPrice}" />
+                        <tr>
+					        <td><input type="checkbox" name="check" class="check"></td>
+					        <td>${dto.num}</td>
+					        <td><img src="images/items/${dto.gImage}.png" width="50" height="50" /></td>
+					        <td>${dto.gCode}</td>
+					        <td>${dto.gPrice}</td>
+					        <td><a href="#" class="btn btn-warning">Delete</a></td>
+					    </tr>
+                        <c:set var="sum" value="${sum + totalPrice}" />
 				      </c:forEach>
 					    <tr>
 					      <td></td>
