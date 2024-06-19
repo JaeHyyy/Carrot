@@ -13,4 +13,8 @@
 	<delete id="cartD" parameterType="String">
 		DELETE FROM cart WHERE gCode = #{gCode}
 	</delete>
+	
+	<delete id="deleteCartItem">
+       DELETE FROM cart WHERE gCode = #{gCode}
+    </delete>
 </mapper>
