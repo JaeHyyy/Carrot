@@ -17,9 +17,7 @@
                                 <th>상품이미지</th>
                                 <th>상품정보</th>
                                 <th>상품가격</th>
-                                <th>상품수량</th>
-                                <th>합계</th>
-                                <th>날짜</th>
+                                <!-- <th>합계</th> -->
                                 <th>Delete</th>
                             </tr>
                     </thead>
