@@ -31,8 +31,8 @@
    
    <!-- 상품 추가-->
    <insert id="goodsAdd" parameterType="GoodsDTO">
-		insert into goods (gCode, userid, gCategory, gName, gContent, gPrice, gImages)
-		values(#{gCode},#{userid},#{gCategory},#{gName},#{gContent},#{gPrice} ,#{gImages})
+		insert into goods (gCode, userid, gCategory, gName, gContent, gPrice, gImage)
+		values(#{gCode},#{userid},#{gCategory},#{gName},#{gContent},#{gPrice} ,#{gImage})
 	</insert>
    
    <!-- 찜하기 -->
