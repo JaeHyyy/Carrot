@@ -16,5 +16,5 @@ public interface GoodsMapper {
 
 	//insert 일때 int가 관례. 업로드 성공,실패가 숫자로 뜬다
 	public int goodsZzim(GoodsDTO dto);
-
+	public List<GoodsDTO> searchGoods(String gName);
 }

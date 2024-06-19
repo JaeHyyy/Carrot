@@ -6,32 +6,19 @@
                 <div class="row ">
                     <nav class="navbar navbar-expand-lg">
                         <div class="navbar-collapse">
-                            <ul class="collapse navbar-nav">
-                                <li class="nav-item">
-                                    <input type="text">
-                                    <button>검색</button>
-                                    <!-- <a class="nav-link" href="main?gCategory=top">검색</a> -->
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <!-- 로그인 안된 상태 
-                            session.getAttribute("login") 값이 null인 경우
-                         -->
-                        <c:if test="${empty login}">
-	                        
-                        </c:if>
-                        
-                        <!-- 로그인 된 상태 
-                          session.getAttribute("login") 값이 null이 아닌 경우
-                        -->
-                         <c:if test="${ ! empty login}">
+                            <form action="/submit-form" method="POST"class="align-items=center">
+    						<div class="form-group">
+        					<input type="text" class="form-control" id="gName" name="gName" placeholder="Search..." required>
+    						<button type="submit" class="btn btn-primary">검색</button>
+    						</div>
+							</form>
+                        </div>          
 	                        <ul class="navbar-nav">
                                 <li class="nav-item text-align=right">
                                     <a class="nav-link" href="goodsAdd">상품등록</a>
                                 </li>
                             </ul>
-                        </c:if>
+                        
                     </nav>
                 </div>
             </div>
