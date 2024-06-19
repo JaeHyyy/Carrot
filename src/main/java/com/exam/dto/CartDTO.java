@@ -88,10 +88,4 @@ public class CartDTO {
 		return "CartDTO [num=" + num + ", userid=" + userid + ", gCode=" + gCode + ", gName=" + gName + ", gPrice="
 				+ gPrice + ", gImage=" + gImage + ", gContent=" + gContent + "]";
 	}
-
-	
-	
-	
-	
-	
 }

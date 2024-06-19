@@ -10,7 +10,9 @@ import com.exam.dto.GoodsDTO;
 @Mapper
 public interface CartMapper {
 
-	public List<GoodsDTO> goodsList();
-	public GoodsDTO goodsRetrieve(String gCode);
+	/*
+	 * public List<GoodsDTO> goodsList(); public GoodsDTO goodsRetrieve(String
+	 * gCode);
+	 */
 	public List<CartDTO> cartList();
 }
