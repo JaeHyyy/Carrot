@@ -28,15 +28,24 @@ public class CartController {
 	public String main(ModelMap m) {
 		List<CartDTO> cart = cartService.cartList();
 		m.addAttribute("cart", cart);
-		
-		
+			
 		return "cart";
 	}
 	
-	 @PostMapping("/delete")
-	 public String CartD(@RequestParam("gCode") String gCode) {
-	   cartService.cartD(gCode);
-	   return "redirect:/cart";  // 삭제 후 카트 페이지로 리다이렉션
-	 }
+	@PostMapping("/delete")
+	public String CartD(@RequestParam("gCode") String gCode) {
+		cartService.cartD(gCode);
+		return "redirect:/cart";
+	}
+	
+	
+	 @PostMapping("/deleteChecked")
+	    public String deleteCheckedItems(@RequestParam("deleteItems") String[] deleteItems) {
+	        for (String code : deleteItems) {
+	        	System.out.println(code);
+	            cartService.deleteCartItem(code);
+	        }
+	        return "redirect:/cart";
+	    }
 }
 

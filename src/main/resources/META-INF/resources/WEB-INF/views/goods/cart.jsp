@@ -12,12 +12,11 @@
                             <tr>
                                 <th>전체삭제
                                     &nbsp;
-                                    <input type="checkbox" name="allCheck" id="allCheck"></th>
-                                <th>번호</th>
+                                    <input type="checkbox" name="allCheck" id="allCheck" onchange="checkAll(this)"></th>
                                 <th>상품이미지</th>
+                                 <th>상품설명</th>
                                 <th>상품정보</th>
                                 <th>상품가격</th>
-                                <!-- <th>합계</th> -->
                                 <th>Delete</th>
                             </tr>
                     </thead>
@@ -26,9 +25,9 @@
                     <c:forEach var="dto" items="${cart}">
                         <c:set var="totalPrice" value="${dto.gPrice}" />
                         <tr>
-					        <td><input type="checkbox" name="check" class="check"></td>
-					        <td>${dto.num}</td>
-					        <td><img src="images/items/${dto.gImage}.png" width="50" height="50" /></td>
+					        <td><input type="checkbox" name="check" class="check" value="${dto.gCode}"></td>
+					        <td><img src="static/images/items/${dto.gImage}" width="50" height="50" /></td>
+					        <td>${dto.gContent}</td>
 					        <td>${dto.gCode}</td>
 					        <td>${dto.gPrice}</td>
 					        <td><!-- <a href="#" class="btn btn-warning">Delete</a> -->
@@ -52,6 +51,43 @@
 
                   </table>
               </div>
-             <div class="btn btn-success m-5">전체삭제</div>
+             <div class="btn btn-success m-5" onclick="deleteItems()">전체삭제</div>
         </div>
     </div>
+
+     <script>
+        // 전체 선택/해제 기능 구현
+        function checkAll(source) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"].check');
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = source.checked;
+            }
+        }
+
+        // 선택된 상품들을 삭제하는 기능
+        function deleteItems() {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"].check:checked');
+        var gCodes = [];
+        for (var i = 0; i < checkboxes.length; i++) {
+            gCodes.push(checkboxes[i].value);
+        }
+        if (gCodes.length > 0) {
+            var form = document.createElement('form');
+            form.setAttribute('method', 'post');
+            form.setAttribute('action', '${pageContext.request.contextPath}/deleteChecked');
+            for (var j = 0; j < gCodes.length; j++) {
+                var input = document.createElement('input');
+                input.setAttribute('type', 'hidden');
+                input.setAttribute('name', 'deleteItems');
+                input.setAttribute('value', gCodes[j]);
+                form.appendChild(input);
+            }
+            document.body.appendChild(form);
+            form.submit();
+        } else {
+            alert('삭제할 상품을 선택해주세요.');
+        }
+    }
+        
+    </script>
+    

@@ -1,6 +1,7 @@
 package com.exam.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -25,5 +26,10 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public void cartD(String gCode) {
 		cartMapper.cartD(gCode);
+	}
+
+	@Override
+	public void deleteCartItem(String gCode) {
+		cartMapper.deleteCartItem(gCode);
 	}
 }
