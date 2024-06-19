@@ -29,6 +29,12 @@
      where gCode = #{gCode}
    </select>
    
+   <!-- 상품 추가-->
+   <insert id="goodsAdd" parameterType="GoodsDTO">
+		insert into goods (gCode, userid, gCategory, gName, gContent, gPrice, gImages)
+		values(#{gCode},#{userid},#{gCategory},#{gName},#{gContent},#{gPrice} ,#{gImages})
+	</insert>
+   
    <!-- 찜하기 -->
    <insert id="goodsZzim" parameterType="GoodsDTO">
    	
@@ -39,4 +45,5 @@
 		<!-- insert into cart (gCode,userid,gCategory,gName,gContent,gPrice,gImage)
 		values(#{gCode},#{userid},#{gCategory},#{gName},#{gContent},#{gPrice},#{gImage}) -->
 	</insert>
+
 </mapper>

@@ -45,5 +45,21 @@ public class GoodsController {
 		return "redirect:main";
 	}
 	
+	@GetMapping("/goodsAdd")
+	public  String goodsAddForm(ModelMap m) {
+		GoodsDTO dto = new GoodsDTO();
+		m.addAttribute("goodsDTO", dto);
+		return "goodsAddForm";
+	}
+	
+	@PostMapping("/goodsAdd")
+	public String goodsAdd(@Valid GoodsDTO dto, BindingResult result) {
+		if(result.hasErrors()) {
+			return "userForm";
+		}
+		logger.info("logger:signup:{}", dto);
+		int n = goodsService.goodsAdd(dto);
+		return "redirect:main";
+	}
 	
 }
