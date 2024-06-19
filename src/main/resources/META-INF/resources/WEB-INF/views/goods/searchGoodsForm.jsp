@@ -8,12 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- searchGoodsForm.jsp -->
-<form action="search" method="post">
-    <input type="text" name="gName" />
-    <button type="submit">검색</button>
-</form>
-
 <c:if test="${not empty searchGoods}">
     <ul>
         <c:forEach var="dto" items="${searchGoods}">
