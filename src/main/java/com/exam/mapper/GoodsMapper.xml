@@ -42,8 +42,12 @@
 	SELECT #{userid}, g.gCode
 	FROM goods g
 	WHERE g.gCode = #{gCode}
-		<!-- insert into cart (gCode,userid,gCategory,gName,gContent,gPrice,gImage)
-		values(#{gCode},#{userid},#{gCategory},#{gName},#{gContent},#{gPrice},#{gImage}) -->
 	</insert>
-
+	
+	 <!-- 검색 -->
+   <select id="searchGoods" parameterType="string" resultType="GoodsDTO">
+    select gCode, userid, gCategory, gName, gContent, gPrice, gImage
+    from goods
+    where gName like CONCAT('%', #{gName}, '%')
+	</select>
 </mapper>

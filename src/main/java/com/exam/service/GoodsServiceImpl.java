@@ -34,6 +34,11 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsMapper.goodsZzim(dto);
 
 	}
+
+	@Override
+	public List<GoodsDTO> searchGoods(String gName) {
+		return goodsMapper.searchGoods(gName);
+	}
 	
 
 }
