@@ -28,7 +28,7 @@
                         <tr>
 					        <td><input type="checkbox" name="check" class="check"></td>
 					        <td>${dto.num}</td>
-					        <td><img src="images/items/${dto.gImage}.png" width="50" height="50" /></td>
+					        <td><img src="static/images/items/${dto.gImage}" width="50" height="50" /></td>
 					        <td>${dto.gCode}</td>
 					        <td>${dto.gPrice}</td>
 					        <td><!-- <a href="#" class="btn btn-warning">Delete</a> -->
