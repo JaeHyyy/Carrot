@@ -20,9 +20,11 @@ public class GoodsController {
 	Logger logger = LoggerFactory.getLogger(getClass());
 	
 	GoodsService goodsService;
+//	CartService cartservice;
 
 	public GoodsController(GoodsService goodsService) {
 		this.goodsService = goodsService;
+//		this.cartservice = cartservice;
 	}
 	
 	@GetMapping("/goodsRetrieve")
@@ -30,6 +32,17 @@ public class GoodsController {
 		GoodsDTO dto = goodsService.goodsRetrieve(gCode);
 		m.addAttribute("goodsRetrieve", dto);
 		return "goodsRetrieve";
+	}
+	
+	@PostMapping("/goodsRetrieve")
+	public String goodsRetrieve(@Valid GoodsDTO dto, BindingResult result) {
+		if(result.hasErrors()) {
+			return "goodsRetrieve";
+		}
+		logger.info("logger:goodsRetrieve:{}", dto);
+		
+		int n = goodsService.goodsZzim(dto);
+		return "redirect:main";
 	}
 	
 	@GetMapping("/goodsAdd")
@@ -48,4 +61,5 @@ public class GoodsController {
 		int n = goodsService.goodsAdd(dto);
 		return "redirect:main";
 	}
+	
 }

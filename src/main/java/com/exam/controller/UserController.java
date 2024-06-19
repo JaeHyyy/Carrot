@@ -35,6 +35,7 @@ UserService userService;
 		return mesg;
 	}
 	
+	//get은 조회
 	@GetMapping("/signup")
 	public  String signupForm(ModelMap m) {
 		UserDTO dto = new UserDTO();
@@ -42,6 +43,7 @@ UserService userService;
 		return "userForm";
 	}
 	
+	//post는 수정, 저장
 	@PostMapping("/signup")
 	public String signup(@Valid UserDTO dto, BindingResult result) {
 		if(result.hasErrors()) {

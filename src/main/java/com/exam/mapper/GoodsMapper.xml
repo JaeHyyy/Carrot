@@ -35,4 +35,15 @@
 		values(#{gCode},#{userid},#{gCategory},#{gName},#{gContent},#{gPrice} ,#{gImages})
 	</insert>
    
+   <!-- 찜하기 -->
+   <insert id="goodsZzim" parameterType="GoodsDTO">
+   	
+   INSERT INTO cart (userid, gCode)
+	SELECT #{userid}, g.gCode
+	FROM goods g
+	WHERE g.gCode = #{gCode}
+		<!-- insert into cart (gCode,userid,gCategory,gName,gContent,gPrice,gImage)
+		values(#{gCode},#{userid},#{gCategory},#{gName},#{gContent},#{gPrice},#{gImage}) -->
+	</insert>
+
 </mapper>

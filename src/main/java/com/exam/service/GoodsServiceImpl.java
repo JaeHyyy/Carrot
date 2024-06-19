@@ -30,6 +30,10 @@ public class GoodsServiceImpl implements GoodsService {
 	public int goodsAdd(GoodsDTO dto) {
 		return goodsMapper.goodsAdd(dto);
 	}
+	public int goodsZzim(GoodsDTO dto) {
+		return goodsMapper.goodsZzim(dto);
+
+	}
 	
 
 }

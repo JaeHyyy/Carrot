@@ -36,7 +36,7 @@
 	                               <a class="nav-link" href="logout">logout</a>
 	                            </li>
 	                             <li class="nav-item">
-	                               <a class="nav-link" href="mypage">mypage</a>
+	                               <a class="nav-link" href="cart">장바구니</a>
 	                            </li>
 	                        </ul>
                         </c:if>

@@ -31,7 +31,7 @@
 	<jsp:include page="common/top.jsp" flush="true" /><br>
 	<jsp:include page="common/menu.jsp" flush="true" />
 	<hr>
-	<jsp:include page="member/mypage.jsp" flush="true" />
+	<jsp:include page="goods/cart.jsp" flush="true" />
  </div>
 </body>
 </html>
