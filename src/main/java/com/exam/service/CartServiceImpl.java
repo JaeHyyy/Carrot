@@ -21,4 +21,9 @@ public class CartServiceImpl implements CartService {
 	public List<CartDTO> cartList() {
 		return cartMapper.cartList();
 	}
+
+	@Override
+	public void cartD(String gCode) {
+		cartMapper.cartD(gCode);
+	}
 }

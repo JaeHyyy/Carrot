@@ -9,4 +9,8 @@
 		FROM cart c
 		JOIN goods g ON c.gCode = g.gCode;
 	</select>
+	
+	<delete id="cartD" parameterType="String">
+		DELETE FROM cart WHERE gCode = #{gCode}
+	</delete>
 </mapper>

@@ -20,11 +20,9 @@ public class GoodsController {
 	Logger logger = LoggerFactory.getLogger(getClass());
 	
 	GoodsService goodsService;
-//	CartService cartservice;
 
 	public GoodsController(GoodsService goodsService) {
 		this.goodsService = goodsService;
-//		this.cartservice = cartservice;
 	}
 	
 	@GetMapping("/goodsRetrieve")

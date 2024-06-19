@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
  
   <div class="TodoApp">
     <div class="container">
@@ -32,7 +33,12 @@
 					        <td><img src="images/items/${dto.gImage}.png" width="50" height="50" /></td>
 					        <td>${dto.gCode}</td>
 					        <td>${dto.gPrice}</td>
-					        <td><a href="#" class="btn btn-warning">Delete</a></td>
+					        <td><!-- <a href="#" class="btn btn-warning">Delete</a> -->
+					        	<form:form action="${pageContext.request.contextPath}/delete" method="post">
+	                            	<input type="hidden" name="gCode" value="${dto.gCode}" />
+	                            	<button type="submit">삭제</button>
+                        		</form:form>
+					        </td>
 					    </tr>
                         <c:set var="sum" value="${sum + totalPrice}" />
 				      </c:forEach>

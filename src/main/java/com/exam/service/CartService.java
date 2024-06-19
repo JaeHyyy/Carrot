@@ -8,4 +8,5 @@ import com.exam.dto.GoodsDTO;
 public interface CartService {
 
 	public List<CartDTO> cartList();
+	public void cartD(String gCode);
 }
