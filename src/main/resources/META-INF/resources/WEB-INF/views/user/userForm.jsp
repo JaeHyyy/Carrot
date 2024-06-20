@@ -1,6 +1,8 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!-- jQuery 설치 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <script src="webjars/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
 	
@@ -18,37 +20,22 @@
 		});//end 비번 확인
 		
 		// id 중복 체크
-		$("#idDupulicatedcheck").on("click", function(){
-			 //jQuery Ajax
-			   $.ajax({
-                   method:"get",
-                   url:"idCheck",   // MemberIdCheckServlet
-                   dataType:'text', // 응답되는 데이터타입, 반환값(사용가능|사용불가)
-                   data:{
-                	   userid:$("#userid").val()
-                   },
-                   success:function(data, status, xhr){
-                       console.log("data:", data);
-                       console.log("status:", status);
-                       $("#idcheck").text(data);
-                   },
-                   error:function(xhr, status, error){
-                       console.log("error:", error);
-                   }
+		$("#userid").on("keyup",function(){
+  			 
+  			  	$.ajax({
+  			  	   url:'userid-check',
+  			  	   method:'get',
+  			  	   dataType:"text",
+  			  	   data:{
+  			  		   "userid":$(this).val()
+  			  	   },
+  			  	   success:function(res, status ,xhr){
+  			  		   $("#result").text(res);
+  			  	   },
+  			  	   error:function(){}
+  			  	});
+  		  });
 
-               });
-		}); // id 중복 체크
-		
-		// 회원가입 서브밋
-	/* 	$("form").on("submit", function(){
-			alert("memberForm submit");
-			this.action="MemberAddServlet";  //MemberAddServlet의 맵핑값
-			this.method="post";
-		}); */
-		
-		
-		
-		
 	});// ready()
 
 </script>
@@ -60,10 +47,9 @@
 		    <label for="userid" class="col-sm-2 col-form-label">*아이디</label>
 		    <div class="col-auto">
 		      <form:input type="text" class="form-control"  path="userid" />
+		      <form:errors path="userid"></form:errors>
 		    </div>
-		    <div class="col-auto">
-			    <button type="button" class="btn btn-primary mb-3" id="idDupulicatedcheck">아이디중복</button>
-  			</div>
+		    
   			<div class="col-sm-3">
 		         <span id="idcheck" class="fs-5"></span>
 		        </div>
