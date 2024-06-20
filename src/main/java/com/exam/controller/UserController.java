@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -49,7 +50,9 @@ UserService userService;
 		if(result.hasErrors()) {
 			return "userForm";
 		}
-		logger.info("logger:signup:{}", dto);
+		String encptPw = 
+				new BCryptPasswordEncoder().encode(dto.getPasswd());
+		dto.setPasswd(encptPw);
 		int n = userService.userAdd(dto);
 		return "redirect:main";
 	}
