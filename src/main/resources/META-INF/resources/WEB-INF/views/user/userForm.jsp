@@ -23,16 +23,18 @@
 		$("#userid").on("keyup",function(){
   			 
   			  	$.ajax({
-  			  	   url:'userid-check',
+  			  	   url:'${pageContext.request.contextPath}/idCheck',
   			  	   method:'get',
   			  	   dataType:"text",
   			  	   data:{
   			  		   "userid":$(this).val()
   			  	   },
   			  	   success:function(res, status ,xhr){
-  			  		   $("#result").text(res);
+  			  		   $("#idcheck").text(res);
   			  	   },
-  			  	   error:function(){}
+  			  	   error:function(xhr, status, error) {
+  	                    console.log("AJAX Error: " + status + error);
+  	                }
   			  	});
   		  });
 

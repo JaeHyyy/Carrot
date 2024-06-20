@@ -20,7 +20,8 @@ import com.exam.service.UserService;
 public class UserController {
 	
 	Logger logger = LoggerFactory.getLogger(getClass());
-UserService userService;
+	
+	UserService userService;
 	
 	public UserController(UserService userService) {
 		this.userService = userService;
@@ -28,6 +29,7 @@ UserService userService;
 
 	@GetMapping("/idCheck")
 	public @ResponseBody String idCheck(@RequestParam String userid) {
+		logger.info("idcheck");
 		UserDTO dto = userService.idCheck(userid);
 		String mesg = "사용가능";
 		if(dto!=null) {
