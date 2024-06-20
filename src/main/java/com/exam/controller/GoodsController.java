@@ -41,13 +41,11 @@ public class GoodsController {
 		return "goodsRetrieve";
 	}
 	
-	
 	@PostMapping("/goodsRetrieve")
 	public String goodsRetrieve(@Valid GoodsDTO dto, BindingResult result) {
 		if(result.hasErrors()) {
 			return "goodsRetrieve";
 		}
-//		logger.info("logger:goodsRetrieve:{}", dto);
 		
 		int n = goodsService.goodsZzim(dto);
 		return "redirect:main";
