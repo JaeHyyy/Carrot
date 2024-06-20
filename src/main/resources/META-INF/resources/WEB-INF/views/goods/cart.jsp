@@ -4,6 +4,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
  
+<!-- <script src="webjars/jquery/3.7.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	
+		$("form").on("submit", function(){
+			alert("삭제 완료");
+			this.action="deleteChecked";  //LoginServlet의 맵핑값
+			this.method="post";
+		});
+		
+	});// ready()
+5
+</script> -->
+ 
   <div class="TodoApp">
     <div class="container">
             <div>

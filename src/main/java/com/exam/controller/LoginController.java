@@ -45,7 +45,7 @@ public class LoginController {
 			model.addAttribute("login", dto); //세션 스코프 
 			return "redirect:main";
 		}
-		model.addAttribute("errorMessage", "아이디 및 비번 학인 필요."); //리퀘스트 스코프
+		model.addAttribute("errorMessage", "아이디 및 비번 확인 필요."); //리퀘스트 스코프
 		return "loginForm";
 	}
 	
