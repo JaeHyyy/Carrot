@@ -43,10 +43,14 @@ public class GoodsController {
 	
 	@PostMapping("/goodsRetrieve")
 	public String goodsRetrieve(@Valid GoodsDTO dto, BindingResult result) {
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if(result.hasErrors()) {
 			return "goodsRetrieve";
 		}
 		
+		UserDTO xxx = (UserDTO)auth.getPrincipal();
+		dto.setUserid(xxx.getUserid());
 		int n = goodsService.goodsZzim(dto);
 		return "redirect:main";
 	}

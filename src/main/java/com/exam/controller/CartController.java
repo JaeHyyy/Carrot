@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,11 +29,16 @@ public class CartController {
 	}
 	
 	@GetMapping("/cart")
-	public String main(Principal principal, ModelMap m) {
-		String username = principal.getName();
-		logger.info("Logged in user: " + username);
+	public String main(ModelMap m) {
 		
-		List<CartDTO> cart = cartService.findByUserId(username);
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		UserDTO user  = (UserDTO) auth.getPrincipal();
+	    String userid = user .getUserid();
+	        
+	    // Retrieve cart list for the logged in user
+	    List<CartDTO> cart = cartService.cartList(userid);
+		
+//		List<CartDTO> cart = cartService.cartList(userid);
 		m.addAttribute("cart", cart);
 			
 		return "cart";
