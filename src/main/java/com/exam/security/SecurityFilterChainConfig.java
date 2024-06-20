@@ -31,7 +31,7 @@ public class SecurityFilterChainConfig {
 		    .passwordParameter("passwd")       // <input name="passwd">
 		    .failureForwardUrl("/login_fail")        // 로그인 실패시 리다이렉트되는 요청맵핑값
 //		    .successForwardUrl("/login_success");    // post 지원안됨.    
-		    .defaultSuccessUrl("/login_success", true); // 로그인 성공시 리다이렉트되는 요청맵핑값
+		    .defaultSuccessUrl("/main", true); // 로그인 성공시 리다이렉트되는 요청맵핑값
 	     //3. csrf 비활성화
 		
 		
