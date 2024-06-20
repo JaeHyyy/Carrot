@@ -2,6 +2,7 @@ package com.exam.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.security.Principal;
 
 import javax.validation.Valid;
 
@@ -45,7 +46,6 @@ public class GoodsController {
 		if(result.hasErrors()) {
 			return "goodsRetrieve";
 		}
-		logger.info("logger:goodsRetrieve:{}", dto);
 		
 		int n = goodsService.goodsZzim(dto);
 		return "redirect:main";

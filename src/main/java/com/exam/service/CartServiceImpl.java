@@ -32,4 +32,9 @@ public class CartServiceImpl implements CartService {
 	public void deleteCartItem(String gCode) {
 		cartMapper.deleteCartItem(gCode);
 	}
+
+	@Override
+	public List<CartDTO> findByUserId(String userid) {
+		return cartMapper.findByUserId(userid);
+	}
 }
