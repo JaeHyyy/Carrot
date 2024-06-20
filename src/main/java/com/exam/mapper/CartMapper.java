@@ -12,6 +12,7 @@ import com.exam.dto.CartDTO;
 public interface CartMapper {
 
 	public List<CartDTO> cartList();
+	public List<CartDTO> findByUserId(String userid);
 	public void cartD(String gCode);
 	public void deleteCartItem(@Param("gCode") String gCode);
 	

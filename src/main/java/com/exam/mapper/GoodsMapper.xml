@@ -39,9 +39,9 @@
    <insert id="goodsZzim" parameterType="GoodsDTO">
    	
    INSERT INTO cart (userid, gCode)
-	SELECT #{userid}, g.gCode
-	FROM goods g
-	WHERE g.gCode = #{gCode}
+    SELECT '#{userid}', g.gCode
+    FROM goods g
+    WHERE g.gCode = #{gCode}
 	</insert>
 	
 	 <!-- 검색 -->

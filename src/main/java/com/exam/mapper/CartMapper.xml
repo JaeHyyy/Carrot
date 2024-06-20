@@ -7,8 +7,16 @@
 	<select id="cartList" resultType="CartDTO">
 		SELECT c.userid, c.gCode, g.*
 		FROM cart c
-		JOIN goods g ON c.gCode = g.gCode;
+		JOIN goods g ON c.gCode = g.gCode
 	</select>
+	
+	<select id="findByUserId" parameterType="String" resultType="CartDTO">
+        SELECT c.userid, c.gCode, g.*
+	    FROM cart c
+	    JOIN goods g ON c.gCode = g.gCode
+	    JOIN user u ON g.userid = u.userid
+	    WHERE u.userid = #{userid}
+    </select>
 	
 	<delete id="cartD" parameterType="String">
 		DELETE FROM cart WHERE gCode = #{gCode}

@@ -1,5 +1,6 @@
 package com.exam.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.exam.dto.CartDTO;
+import com.exam.dto.UserDTO;
 import com.exam.service.CartService;
 
 @Controller
@@ -25,8 +27,11 @@ public class CartController {
 	}
 	
 	@GetMapping("/cart")
-	public String main(ModelMap m) {
-		List<CartDTO> cart = cartService.cartList();
+	public String main(Principal principal, ModelMap m) {
+		String username = principal.getName();
+		logger.info("Logged in user: " + username);
+		
+		List<CartDTO> cart = cartService.findByUserId(username);
 		m.addAttribute("cart", cart);
 			
 		return "cart";

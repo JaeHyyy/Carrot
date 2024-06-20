@@ -2,11 +2,14 @@ package com.exam.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.security.Principal;
 
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -36,12 +39,13 @@ public class GoodsController {
 		return "goodsRetrieve";
 	}
 	
+	
 	@PostMapping("/goodsRetrieve")
 	public String goodsRetrieve(@Valid GoodsDTO dto, BindingResult result) {
 		if(result.hasErrors()) {
 			return "goodsRetrieve";
 		}
-		logger.info("logger:goodsRetrieve:{}", dto);
+//		logger.info("logger:goodsRetrieve:{}", dto);
 		
 		int n = goodsService.goodsZzim(dto);
 		return "redirect:main";
