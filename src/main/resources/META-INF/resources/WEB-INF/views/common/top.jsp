@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
  <header class="border-bottom border-light border-5">
             <div class="container">
                 <div class="row">
@@ -13,33 +14,34 @@
                             </ul>
                         </div>
                         
-                        <!-- 로그인 안된 상태 
-                            session.getAttribute("login") 값이 null인 경우
-                         -->
-                       <c:if test="${empty login}">
+                        <!-- 로그인 안된 상태  -->
 	                        <ul class="navbar-nav">
+	                        	<sec:authorize access="isAnonymous()">
 	                            <li class="nav-item">
 	                               <a class="nav-link" href="login">Login</a>
 	                            </li>
-	                             <li class="nav-item">
+	                            </sec:authorize>
+	                            <sec:authorize access="isAnonymous()">
+	                            <li class="nav-item">
 	                               <a class="nav-link" href="signup">signup</a>
 	                            </li>
+	                            </sec:authorize>
 	                        </ul>
-                        </c:if>
                         
-                        <!-- 로그인 된 상태 
-                          session.getAttribute("login") 값이 null이 아닌 경우
-                        -->
-                         <c:if test="${ ! empty login}">
+                        <!-- 로그인 된 상태  -->
 	                        <ul class="navbar-nav">
+	                        	<sec:authorize access="isAuthenticated()">
 	                            <li class="nav-item">
 	                               <a class="nav-link" href="logout">logout</a>
 	                            </li>
+	                            </sec:authorize>
+	                            <sec:authorize access="isAuthenticated()">
 	                             <li class="nav-item">
 	                               <a class="nav-link" href="cart">장바구니</a>
 	                            </li>
+	                            </sec:authorize>
 	                        </ul>
-                        </c:if>
+                        
                         
                         
                         
