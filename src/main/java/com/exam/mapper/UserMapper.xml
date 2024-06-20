@@ -24,10 +24,7 @@
       from user
       where userid=#{userid} and passwd=#{passwd}
   	</select>
-  	
-  	
 	
-   
 </mapper>
 
 
