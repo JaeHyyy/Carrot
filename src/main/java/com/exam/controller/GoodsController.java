@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.exam.dto.GoodsDTO;
+import com.exam.dto.UserDTO;
 import com.exam.service.GoodsService;
+
 
 @Controller
 public class GoodsController {
@@ -71,6 +73,10 @@ public class GoodsController {
 	
 		//저장 디레고리
 		File f = new File("C://upload", image.getOriginalFilename());
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		
+		UserDTO xxx = (UserDTO)auth.getPrincipal();
+		dto.setUserid(xxx.getUserid());
 
 		try {
 			image.transferTo(f);
@@ -79,9 +85,7 @@ public class GoodsController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
-		
+
 		int n = goodsService.goodsAdd(dto);
 		return "redirect:main";
 	}
