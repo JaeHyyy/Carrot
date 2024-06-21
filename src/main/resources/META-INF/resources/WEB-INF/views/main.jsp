@@ -5,20 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>메인홈페이지</title>
+<link href="https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&family=Jua&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 <style type="text/css">
 	body {
 		background-color: beige;
 	}
-
-	@font-face {
-  		font-family: "baemin";
-  		src: url("font/BMJUA_ttf.ttf") format("truetype");
-  		font-weight: bold;
-	}
 	
-	/* * {
-  		font-family: 'baemin', serif;
-	} */
+	* {
+  	font-family: "Jua", sans-serif;
+  	font-weight: 400;
+  	font-style: normal;
+	}
 
     .App {
 	  text-align: center;
