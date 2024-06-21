@@ -34,6 +34,13 @@ public class GoodsController {
 		this.goodsService = goodsService;
 	}
 	
+	@GetMapping("/chatForm")
+	public String chatForm(@RequestParam String gCode, ModelMap m) {
+		GoodsDTO dto = goodsService.goodsRetrieve(gCode);
+		m.addAttribute("goodsRetrieve", dto);
+	    return "chatForm";
+	}
+	
 	@GetMapping("/goodsRetrieve")
 	public String goodsRetrieve(@RequestParam String gCode, ModelMap m) {
 		GoodsDTO dto = goodsService.goodsRetrieve(gCode);

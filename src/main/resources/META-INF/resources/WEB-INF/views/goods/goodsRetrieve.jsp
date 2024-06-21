@@ -13,7 +13,16 @@
     
     
     </style>
-    
+<script src="webjars/jquery/3.7.1/jquery.min.js"></script>     
+<script>
+$(document).ready(function(){
+    $('#buy').click(function(){
+    	var gCode = "${dto.gCode}";
+        window.location.href = "chatForm?gCode=" + gCode;
+    });
+});
+</script>
+
 <div class="container">
 	<form:form class="row g-3 m-4" modelAttribute="GoodsDTO" method="post">
 	  <input type="hidden" name="gImage" value="${goodsRetrieve.gImage}">
@@ -38,7 +47,7 @@
 		       		${goodsRetrieve.gPrice}
 		       </h6>
 		       
-		       <a href="#" class="btn btn-primary mt-3">구매</a>
+		       <button id="buy" type="button" class="btn btn-primary mt-3">채팅하기</button>
 		       <button type="submit" class="btn btn-primary mt-3">찜</button>
     	</div>
 	  </div>
