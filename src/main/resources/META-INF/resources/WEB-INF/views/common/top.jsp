@@ -25,7 +25,8 @@
 		width: 80px;
 	  	height: 70px;
 	  	/* object-fit: contain; */
-	  	margin-right: 50px;
+	  	margin-right: 120px;
+	  	margin-left: -60px;
 	  	border-radius: 50px;
 	}
 	
@@ -62,6 +63,12 @@
     		margin: 0;
     		border: none;
     		background-color: #FFEB5A;
+    	}
+    	
+    	.love {
+    		width: 30px;
+    		height: 30px;
+    		object-fit: contain;
     	}
 	
  </style>
@@ -107,7 +114,9 @@
 	                            </sec:authorize>
 	                            <sec:authorize access="isAuthenticated()">
 	                             <li class="nav-item">
-	                               <a class="nav-link" href="cart">장바구니</a>
+	                               <a class="nav-link" href="cart">
+	                               	<img src="images/des/love.png" alt="찜리스트" class="love">
+	                               </a>
 	                            </li>
 	                            </sec:authorize>
 	                        </ul>  

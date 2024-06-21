@@ -10,6 +10,19 @@
     		height: 300px;
     		margin-bottom: 20px;
     	}
+    	
+    	.loveBox {
+    		border: none;
+    		background-color: beige;
+    		margin-left: 5px;
+    	}
+    	
+    	.lovee {
+    		width: 30px;
+    		height: 30px;
+    		object-fit: contain;
+    		margin-top: 17px;
+    	}
     
     
     </style>
@@ -47,8 +60,8 @@ $(document).ready(function(){
 		       		${goodsRetrieve.gPrice}
 		       </h6>
 		       
-		       <button id="buy" type="button" class="btn btn-primary mt-3">채팅하기</button>
-		       <button type="submit" class="btn btn-primary mt-3">찜</button>
+		       <button id="buy" type="button" class="btn btn-warning mt-3">채팅</button>
+		       <button type="submit" class="btn btn-warning mt-3">찜하기</button>
     	</div>
 	  </div>
 	</form:form>
