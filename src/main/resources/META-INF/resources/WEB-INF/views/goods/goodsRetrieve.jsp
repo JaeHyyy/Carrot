@@ -2,16 +2,22 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" 
     prefix="form"%>
-    <style type="text/css">
-    
-    	.goodBox>img {
-    		width: 300px;
-    		height: 300px;
-    		margin-bottom: 20px;
-    	}
-    
-    
-    </style>
+<script src="webjars/jquery/3.7.1/jquery.min.js"></script>     
+<script>
+$(document).ready(function(){
+    $('#buy').click(function(){
+    	var gCode = "${dto.gCode}";
+        window.location.href = "chatForm?gCode=" + gCode;
+    });
+});
+</script>
+<style type="text/css">
+	.goodBox>img {
+    	width: 300px;
+    	height: 300px;
+    	margin-bottom: 20px;
+    }
+</style>
     
 <div class="container">
 	<form:form class="row g-3 m-4" modelAttribute="GoodsDTO" method="post">
@@ -37,7 +43,7 @@
 		       		${goodsRetrieve.gPrice}
 		       </h6>
 		       
-		       <a href="#" class="btn btn-primary mt-3">구매</a>
+		       <button id="buy" type="button" class="btn btn-primary mt-3">채팅하기</button>
 		       <button type="submit" class="btn btn-primary mt-3">찜</button>
     	</div>
 	  </div>
