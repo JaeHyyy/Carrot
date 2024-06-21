@@ -6,6 +6,16 @@
 <meta charset="UTF-8">
 <title>메인홈페이지</title>
 <style type="text/css">
+	@font-face {
+  		font-family: "baemin";
+  		src: url("font/BMJUA_ttf.ttf") format("truetype");
+  		font-weight: bold;
+	}
+	
+	/* * {
+  		font-family: 'baemin', serif;
+	} */
+
     .App {
 	  text-align: center;
 	  font-size: 16px;
@@ -25,11 +35,25 @@
  </style>
 <link rel="stylesheet"  href="webjars/bootstrap/5.3.3/css/bootstrap.min.css" >
 <script src="webjars/jquery/3.7.1/jquery.min.js"></script>
+<script>
+	// APP 윈도우 크기로 맞춰보기
+	$(document).ready(function(){
+		let ww = $(window).width();
+		let wh = $(window).height();
+		
+		$('.App').css({
+			/* width: ww, 
+			height: wh,  */
+			backgroundColor: 'beige',
+			});
+	});
+</script>
+
 </head>
 <body>
  <div class="App">
 	<jsp:include page="common/top.jsp" flush="true" /><br>
-	<jsp:include page="common/menu.jsp" flush="true" />
+	<%-- <jsp:include page="common/menu.jsp" flush="true"/> --%>
 	<hr>
 	<jsp:include page="goods/goodsList.jsp" flush="true" />
  </div>
