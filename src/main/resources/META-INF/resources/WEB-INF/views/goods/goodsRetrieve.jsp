@@ -2,6 +2,17 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" 
     prefix="form"%>
+<link href="css/commonCss.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    
+    	.goodBox>img {
+    		width: 300px;
+    		height: 300px;
+    		margin-bottom: 20px;
+    	}
+    
+    
+    </style>
 <script src="webjars/jquery/3.7.1/jquery.min.js"></script>     
 <script>
 $(document).ready(function(){
@@ -11,14 +22,7 @@ $(document).ready(function(){
     });
 });
 </script>
-<style type="text/css">
-	.goodBox>img {
-    	width: 300px;
-    	height: 300px;
-    	margin-bottom: 20px;
-    }
-</style>
-    
+
 <div class="container">
 	<form:form class="row g-3 m-4" modelAttribute="GoodsDTO" method="post">
 	  <input type="hidden" name="gImage" value="${goodsRetrieve.gImage}">

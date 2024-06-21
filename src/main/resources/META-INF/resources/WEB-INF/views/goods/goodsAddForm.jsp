@@ -6,6 +6,7 @@
 <script src="webjars/bootstrap/5.3.3/js/bootstrap.min.js"></script>
 <script src="webjars/jquery/3.7.1/jquery.min.js"></script>	
 <script type="text/javascript" src="js/script.js"></script>
+<link href="css/commonCss.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 		.conMg {
 			margin-top: -70px;
@@ -16,14 +17,14 @@
           
        }
        
-       .test {
+       .addBox {
        	display: flex;
        	justify-content: center;
 		align-items: center;
        	
        }
        
-       .test > span {
+       .addBox > span {
         width: 100px; /* 모든 라벨의 너비를 동일하게 설정 */
         margin-right: 20px;
         text-align: right; /* 라벨 텍스트를 오른쪽 정렬 */
@@ -44,27 +45,27 @@
 		<div class="card" style="width:30rem;"><br>
 		<h2 class="card-title">상품 추가</h2>
 		<div class="card-body">
-			<div class="test">
+			<!-- <div class="addBox">
 				<span class="sName">상품번호 </span>
 				<input type="text" name="gCode" class="form-control mb-2">
-			</div><br>
-			<div class="test">
+			</div><br> -->
+			<div class="addBox">
 				<span class="sName">카테고리 </span>
 				<input type="text" name="gCategory" class="form-control mb-2">
 			</div><br>
-			<div class="test">
+			<div class="addBox">
 				<span class="sName">상품이름 </span>
 				<input type="text" name="gName" class="form-control mb-2">
 			</div><br>
-			<div class="test">
+			<div class="addBox">
 				<span class="sName">상품설명 </span>
 				<input type="text" name="gContent" class="form-control mb-2">
 			</div><br>
-			<div class="test">
+			<div class="addBox">
 				<span class="cName">가&nbsp&nbsp&nbsp&nbsp&nbsp격 </span>
 				<input type="text" name="gPrice" class="form-control mb-2">
 			</div><br>
-			<div class="test">
+			<div class="addBox">
 				<span class="sName">이&nbsp미&nbsp지 </span>
 				<input type="file" name="image" class="form-control mb-2">
 			</div><br>

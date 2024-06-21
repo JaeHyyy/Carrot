@@ -13,7 +13,7 @@
 	  object-fit: contain;
 	}
 	
-	/* .charBox {
+	.charBox {
 		width: 70%;
 		height: 70%;
 		display: flex;
@@ -22,11 +22,12 @@
 	}
 	
 	.charImg {
-		width: 180px;
+		width: 80px;
 	  	height: 70px;
-	  	object-fit: contain;
+	  	/* object-fit: contain; */
 	  	margin-right: 50px;
-	} */
+	  	border-radius: 50px;
+	}
 	
 	.mainBtn {
 		/* height: 66px; */
@@ -56,7 +57,7 @@
     	
     	.mogBtn {
     		width: 45px;
-    		height: 35px;
+    		height: 30px;
     		padding: 0;
     		margin: 0;
     		border: none;
@@ -78,9 +79,9 @@
                             </ul>
                         </div>
                         
-                       <!--  <div class="charBox">
+                        <div class="charBox">
 	                        <img src="images/des/char.png" class="charImg" alt="당근캐릭터">                        
-                        </div> -->
+                        </div>
                         
                         
                         <!-- 로그인 안된 상태  -->

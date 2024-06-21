@@ -3,10 +3,20 @@
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<link href="css/commonCss.css" rel="stylesheet" type="text/css">
+ <style type="text/css">
+ 	.TodoApp {
+	  background-color: beige;
+	}
+	
+	.table {
+		background-color: beige;
+	}
+ </style>
  
-<!-- <script src="webjars/jquery/3.7.1/jquery.min.js"></script>
+<script src="webjars/jquery/3.7.1/jquery.min.js"></script>
 	<script>
-	$(document).ready(function(){
+/* $(document).ready(function(){
 	
 		$("form").on("submit", function(){
 			alert("삭제 완료");
@@ -14,17 +24,16 @@
 			this.method="post";
 		});
 		
-	});// ready()
-5
-</script> -->
+	}); */ // ready()
+</script>
  
   <div class="TodoApp">
     <div class="container">
-            <div>
+            <div class="cartBox">
                 <table class="table">
                     <thead>
                             <tr>
-                                <th>전체삭제
+                                <th>전체선택
                                     &nbsp;
                                     <input type="checkbox" name="allCheck" id="allCheck" onchange="checkAll(this)"></th>
                                 <th>상품이미지</th>
@@ -47,7 +56,7 @@
 					        <td><!-- <a href="#" class="btn btn-warning">Delete</a> -->
 					        	<form:form action="${pageContext.request.contextPath}/delete" method="post">
 	                            	<input type="hidden" name="gCode" value="${dto.gCode}" />
-	                            	<button type="submit">삭제</button>
+	                            	<button type="submit" class="btn btn-danger">삭제</button>
                         		</form:form>
 					        </td>
 					    </tr>
