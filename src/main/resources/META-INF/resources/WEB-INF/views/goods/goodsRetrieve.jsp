@@ -2,8 +2,19 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" 
     prefix="form"%>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&family=Jua&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 <link href="css/commonCss.css" rel="stylesheet" type="text/css">
     <style type="text/css">
+    
+	    .container {
+	  	font-family: "Jua", sans-serif;
+	  	font-weight: 400;
+	  	font-style: normal;
+		}
+		
+		.ffon {
+			font-size: 20px;
+		}
     
     	.goodBox>img {
     		width: 300px;
@@ -47,21 +58,21 @@ $(document).ready(function(){
 	  <div class="row">    
 	  	<div class="goodBox">
     		 <img src="static/images/items/${goodsRetrieve.gImage}" alt="...">
-			   <h6>
+			   <h4>
 		        	<span class="fw-bold">판매자:</span>  
 		        	${goodsRetrieve.userid}
-		       </h6>
-	       	   <h6>
+		       </h4>
+	       	   <h4>
 		      		<span class="fw-bold ">상품명:</span>
 		       		${goodsRetrieve.gName}
-		       </h6>
-	       	   <h6>
+		       </h4>
+	       	   <h4>
 		      		<span class="fw-bold ">가격:</span>
 		       		${goodsRetrieve.gPrice}
-		       </h6>
+		       </h4>
 		       
 		       <button id="buy" type="button" class="btn btn-warning mt-3">채팅</button>
-		       <button type="submit" class="btn btn-warning mt-3">찜하기</button>
+		       <button type="submit" class="btn btn-warning mt-3 ">찜하기</button>
     	</div>
 	  </div>
 	</form:form>

@@ -10,16 +10,12 @@
 	body {
 		background-color: beige;
 	}
-	
-	* {
-  	font-family: "Jua", sans-serif;
-  	font-weight: 400;
-  	font-style: normal;
-	}
 
     .App {
 	  text-align: center;
-	  font-size: 16px;
+	  font-family: "Jua", sans-serif;
+  	  font-weight: 400;
+  	  font-style: normal;
 	}
 	
     label, input, button {
