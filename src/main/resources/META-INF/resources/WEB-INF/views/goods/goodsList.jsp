@@ -9,10 +9,6 @@
 		font-weight: 900;
 	}
 	
-	.test {
-		position: relative;
-	}
-	
 	.goodBox {
 		background: rgba( 255, 255, 255, 0.15 );
 		backdrop-filter: blur( 4.5px );

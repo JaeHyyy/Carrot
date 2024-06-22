@@ -136,7 +136,7 @@
 						<nav class="navbar navbar-expand-lg">
 						<div class="navbar-collapse">
 						<form action="search" method="post">
-    						<input type="text" name="gName" value="물건을 검색해보세요"/>
+    						<input type="text" name="gName" placeholder="물건을 검색해보세요."/>
     						<button type="submit" class="mogBtn">
     							<img src="images/des/mog.png" alt="돋보기아이콘" class="mogBtn mog">
     						</button>

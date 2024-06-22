@@ -1,21 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link href="css/commonCss.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&family=Jua&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<style type="text/css">
+	.row {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: "Jua", sans-serif;
+	  	font-weight: 400;
+	  	font-style: normal;
+	}
+	
+	.btn {
+		margin-top: 20px;
+	}
 
+	.goodBox {
+		width: 300px;
+		height: 370px;
+		margin-right: 35px;
+	}
+	
+	.gImage {
+		width: 300px;
+    	height: 300px;
+    	margin-left: -12px;
+	}
+</style>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:choose>
     <c:when test="${not empty searchGoods}">
-        <ul>
+        <div class="row">
             <c:forEach var="dto" items="${searchGoods}">
-                <div class="col border border-dark m-4 w-80">
+         
+            	<div class="goodBox">
+    				<a href="goodsRetrieve?gCode=${dto.gCode}"> 
+						<img src="static/images/items/${dto.gImage}" width="200" class="gImage">
+						<button class="btn btn btn-warning">상품 상세</button>
+					</a>
+					
+					<!-- <button id="navButton">상품 상세</button> -->
+					
+					<%-- <div class="mt-4 fs-6">${dto.gName}</div>
+	       			<div class="mt-2 fs-6">${dto.gContent}</div>
+	       			<div class="mt-2 fs-6">${dto.gPrice}</div> --%>
+    			</div>
+            	
+                <%-- <div class="col border border-dark m-4 w-80">
                   <a href="goodsRetrieve?gCode=${dto.gCode}"> 
                     <img src="static/images/items/${dto.gImage}" width="200">
                   </a>
                   <div class="mt-4 fs-6">${dto.gName}</div>
                   <div class="mt-2 fs-6">${dto.gContent}</div>
                   <div class="mt-2 fs-6">${dto.gPrice}</div>
-                </div>
+                </div> --%>
+                
             </c:forEach>
-        </ul>
+        </div>
     </c:when>
     <c:otherwise>
         <div class="alert alert-warning" role="alert">

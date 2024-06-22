@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <script src="webjars/jquery/3.7.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&family=Jua&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<style>
+	.container {
+	  font-family: "Jua", sans-serif;
+  	  font-weight: 400;
+  	  font-style: normal;
+	}
+</style>
 <div class="container">
     <form action="auth" method="post" class="row g-3 m-4">
 		<div class="row mb-3">

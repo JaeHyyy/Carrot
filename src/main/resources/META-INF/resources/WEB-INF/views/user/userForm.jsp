@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <script src="webjars/jquery/3.7.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&family=Jua&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 <script type="text/javascript">
 	
 	$(document).ready(function(){
@@ -41,6 +42,13 @@
 	});// ready()
 
 </script>
+<style>
+	.container {
+	  font-family: "Jua", sans-serif;
+  	  font-weight: 400;
+  	  font-style: normal;
+	}
+</style>
 <%@ taglib uri="http://www.springframework.org/tags/form" 
     prefix="form"%>
 <div class="container">
