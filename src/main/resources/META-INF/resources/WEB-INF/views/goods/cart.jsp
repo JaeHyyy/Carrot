@@ -3,10 +3,14 @@
     pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<link href="https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&family=Jua&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 <link href="css/commonCss.css" rel="stylesheet" type="text/css">
  <style type="text/css">
  	.TodoApp {
 	  background-color: beige;
+	  font-family: "Jua", sans-serif;
+  	  font-weight: 400;
+  	  font-style: normal;
 	}
 	
 	.table {

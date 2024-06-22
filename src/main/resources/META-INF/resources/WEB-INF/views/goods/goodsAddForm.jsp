@@ -6,10 +6,14 @@
 <script src="webjars/bootstrap/5.3.3/js/bootstrap.min.js"></script>
 <script src="webjars/jquery/3.7.1/jquery.min.js"></script>	
 <script type="text/javascript" src="js/script.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&family=Jua&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 <link href="css/commonCss.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 		.conMg {
 			margin-top: -70px;
+			font-family: "Jua", sans-serif;
+  	  		font-weight: 400;
+  	  		font-style: normal;
 		}
 
        .form-control {

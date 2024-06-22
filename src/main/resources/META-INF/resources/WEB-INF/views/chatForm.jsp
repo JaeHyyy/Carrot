@@ -44,7 +44,7 @@
  <div class="App">
 	<jsp:include page="common/top.jsp" flush="true" /><br>
 	<%-- <jsp:include page="common/menu.jsp" flush="true"/> --%>
-	<jsp:include page="user/chatForm.jsp" flush="true" />
+	<jsp:include page="user/chat.jsp" flush="true" />
  </div>
 </body>
 </html>
