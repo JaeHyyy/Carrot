@@ -40,23 +40,8 @@
 						<img src="static/images/items/${dto.gImage}" width="200" class="gImage">
 						<button class="btn btn btn-warning">상품 상세</button>
 					</a>
-					
-					<!-- <button id="navButton">상품 상세</button> -->
-					
-					<%-- <div class="mt-4 fs-6">${dto.gName}</div>
-	       			<div class="mt-2 fs-6">${dto.gContent}</div>
-	       			<div class="mt-2 fs-6">${dto.gPrice}</div> --%>
     			</div>
-            	
-                <%-- <div class="col border border-dark m-4 w-80">
-                  <a href="goodsRetrieve?gCode=${dto.gCode}"> 
-                    <img src="static/images/items/${dto.gImage}" width="200">
-                  </a>
-                  <div class="mt-4 fs-6">${dto.gName}</div>
-                  <div class="mt-2 fs-6">${dto.gContent}</div>
-                  <div class="mt-2 fs-6">${dto.gPrice}</div>
-                </div> --%>
-                
+            
             </c:forEach>
         </div>
     </c:when>
