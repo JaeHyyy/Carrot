@@ -15,13 +15,13 @@
 		    <div>${errorMessage}</div>
 		</div>
 
-		  <div class="row mb-3">
+		  <div class="row mb-3 justify-content-center">
 		    <label for="userid" class="col-sm-2 col-form-label">아이디</label>
 		    <div class="col-auto">
 		      <input type="text" class="form-control" id="userid" name="userid">
 		    </div>
 		  </div>
-		 <div class="row mb-3">
+		 <div class="row mb-3 justify-content-center">
 		    <label for="password" class="col-sm-2 col-form-label">비밀번호</label>
 		    <div class="col-auto">
 		      <input type="password" class="form-control" name="passwd" id="passwd">
