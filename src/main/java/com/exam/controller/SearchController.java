@@ -39,7 +39,8 @@ public class SearchController {
 	public String search(@RequestParam(name = "gName", required = false) String gName, ModelMap model) {
 		List<GoodsDTO> searchResults;
 	    if (gName == null || gName.isEmpty()) {
-	        searchResults = goodsService.goodsList();
+	        searchResults = List.of();
+	        
 	    } else {
 	        searchResults = goodsService.searchGoods(gName);
 	    }

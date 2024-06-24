@@ -41,7 +41,6 @@
 						<button class="btn btn btn-warning">상품 상세</button>
 					</a>
     			</div>
-            
             </c:forEach>
         </div>
     </c:when>
